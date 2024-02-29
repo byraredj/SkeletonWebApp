@@ -33,6 +33,10 @@ public class QueryProcessor {
       return getSquareAndCubeNumber(query);
     }
 
+    if(query.toLowerCase().contains("minus")) {
+      return getDiff(query);
+    }
+
     return "";
   }
 
@@ -71,6 +75,7 @@ public class QueryProcessor {
         largest = value;
       }
     }
+
     return Integer.toString(largest);
   }
 
@@ -81,5 +86,32 @@ public class QueryProcessor {
     final Integer number2 = Integer.parseInt(str);
     final int sum = number1 + number2;
     return Integer.toString(sum);
+  }
+
+  private static String getDiff(String query) {
+    final String[] strArray = query.split(" ");
+    final Integer number1 = Integer.parseInt(strArray[2]);
+    final String str = strArray[4].replace("?","");
+    final Integer number2 = Integer.parseInt(str);
+    final int diff = number1 - number2;
+    return Integer.toString(diff);
+  }
+
+  private static String getPrimes(String query) {
+    return null;
+  }
+
+  private boolean isPrime(int num)
+  {
+    if(num<=1)
+    {
+      return false;
+    }
+    for(int i=2;i<=num/2;i++)
+    {
+      if((num%i)==0)
+        return  false;
+    }
+    return true;
   }
 }

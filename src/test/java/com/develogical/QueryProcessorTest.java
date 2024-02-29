@@ -63,4 +63,9 @@ public class QueryProcessorTest {
     assertThat(queryProcessor.process("Which of the following numbers is both a square and a cube: 3176, 64, 1296, 100, 2744, 2250, 2108?"), containsString("64"));
   }
 
+  @Test
+  public void getDiff() throws Exception {
+    assertThat(queryProcessor.process("What is 23 minus 59?"), containsString("-36"));
+  }
+
 }
