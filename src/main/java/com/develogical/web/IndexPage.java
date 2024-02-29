@@ -8,6 +8,7 @@ public class IndexPage extends HtmlPage {
   protected void writeContentTo(PrintWriter writer) {
     writer.println(
         "<h1>Welcome!</h1>"
+            + "<h2>Testing the change locally</h2>"
             + "<p>Please enter your query in the box below: "
             + "<form><input type=\"text\" name=\"q\" />"
             + "<input type=\"submit\">"
