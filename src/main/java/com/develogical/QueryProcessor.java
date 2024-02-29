@@ -21,7 +21,25 @@ public class QueryProcessor {
       return getSumOf(query);
     }
 
+    if(query.toLowerCase().contains("largest")) {
+      return getLargest(query);
+    }
+
     return "";
+  }
+
+  private String getLargest(String query) {
+    final String[] strArray = query.split(":");
+    final String numberArrayStr = strArray[1].replace("?","").replace(" ", "");
+    final String[] numberArray = numberArrayStr.split(",");
+    int largest = 0;
+    for (int i = 0; i < numberArray.length ; i++) {
+      int value = Integer.parseInt(numberArray[i]);
+      if(value > largest) {
+        largest = value;
+      }
+    }
+    return Integer.toString(largest);
   }
 
   private static String getSumOf(String query) {

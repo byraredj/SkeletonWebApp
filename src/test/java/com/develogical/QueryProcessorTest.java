@@ -34,5 +34,14 @@ public class QueryProcessorTest {
   public void sumOf70And48() throws Exception {
     assertThat(queryProcessor.process("What is 70 plus 48?"), containsString("118"));
   }
+  @Test
+  public void largestOf3Numbers() throws Exception {
+    assertThat(queryProcessor.process("Which of the following numbers is the largest: 96, 28, 68?"), containsString("96"));
+  }
+
+  @Test
+  public void largestOf3Numbers1() throws Exception {
+    assertThat(queryProcessor.process("Which of the following numbers is the largest: 75, 94, 15?"), containsString("94"));
+  }
 
 }
