@@ -27,5 +27,9 @@ public class QueryProcessorTest {
   public void tellTheName() throws Exception {
     assertThat(queryProcessor.process("What is your name?"), containsString("firsttimers"));
   }
+@Test
+  public void sumOf33And24() throws Exception {
+    assertThat(queryProcessor.process("What is 33 plus 24?"), containsString("57"));
+  }
 
 }

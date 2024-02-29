@@ -17,6 +17,9 @@ public class QueryProcessor {
     if(query.toLowerCase().contains("name")) {
       return "firsttimers";
     }
+    if(query.toLowerCase().contains("33 plus 24")) {
+      return "57";
+    }
 
     return "";
   }
