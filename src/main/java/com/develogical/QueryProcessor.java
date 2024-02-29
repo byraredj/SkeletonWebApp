@@ -17,10 +17,19 @@ public class QueryProcessor {
     if(query.toLowerCase().contains("name")) {
       return "firsttimers";
     }
-    if(query.toLowerCase().contains("33 plus 24")) {
-      return "57";
+    if(query.toLowerCase().contains("plus")) {
+      return getSumOf(query);
     }
 
     return "";
+  }
+
+  private static String getSumOf(String query) {
+    final String[] strArray = query.split(" ");
+    final Integer number1 = Integer.parseInt(strArray[2]);
+    final String str = strArray[4].replace("?","");
+    final Integer number2 = Integer.parseInt(str);
+    final int sum = number1 + number2;
+    return Integer.toString(sum);
   }
 }

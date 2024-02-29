@@ -30,6 +30,9 @@ public class QueryProcessorTest {
 @Test
   public void sumOf33And24() throws Exception {
     assertThat(queryProcessor.process("What is 33 plus 24?"), containsString("57"));
+  }@Test
+  public void sumOf70And48() throws Exception {
+    assertThat(queryProcessor.process("What is 70 plus 48?"), containsString("118"));
   }
 
 }
