@@ -44,4 +44,14 @@ public class QueryProcessorTest {
     assertThat(queryProcessor.process("Which of the following numbers is the largest: 75, 94, 15?"), containsString("94"));
   }
 
+  @Test
+  public void multiplicationOfTwoNumbers() throws Exception {
+    assertThat(queryProcessor.process("What is 20 multiplied by 87?"), containsString("1740"));
+  }
+
+  @Test
+  public void multiplicationOfTwoNumbers1() throws Exception {
+    assertThat(queryProcessor.process("What is 59 multiplied by 84?"), containsString("4956"));
+  }
+
 }

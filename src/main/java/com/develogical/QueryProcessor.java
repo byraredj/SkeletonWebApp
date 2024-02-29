@@ -25,7 +25,20 @@ public class QueryProcessor {
       return getLargest(query);
     }
 
+    if(query.toLowerCase().contains("multiplied")) {
+      return getMultipliedValue(query);
+    }
+
     return "";
+  }
+
+  private String getMultipliedValue(String query) {
+    final String[] strArray = query.split(" ");
+    final Integer number1 = Integer.parseInt(strArray[2]);
+    final String str = strArray[5].replace("?","");
+    final Integer number2 = Integer.parseInt(str);
+    final int value = number1 * number2;
+    return Integer.toString(value);
   }
 
   private String getLargest(String query) {
