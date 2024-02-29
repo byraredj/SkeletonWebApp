@@ -14,6 +14,9 @@ public class QueryProcessor {
     if(query.toLowerCase().contains("uncle bob")) {
       return "Clean Code";
     }
+    if(query.toLowerCase().contains("name")) {
+      return "firsttimers";
+    }
 
     return "";
   }
