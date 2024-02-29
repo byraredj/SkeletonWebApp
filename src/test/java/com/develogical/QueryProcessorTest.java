@@ -54,4 +54,13 @@ public class QueryProcessorTest {
     assertThat(queryProcessor.process("What is 59 multiplied by 84?"), containsString("4956"));
   }
 
+  @Test
+  public void squareAndCube() throws Exception {
+    assertThat(queryProcessor.process("Which of the following numbers is both a square and a cube: 3176, 2714, 1296, 1, 2744, 2250, 2108?"), containsString("1"));
+  }
+  @Test
+  public void squareAndCube1() throws Exception {
+    assertThat(queryProcessor.process("Which of the following numbers is both a square and a cube: 3176, 64, 1296, 100, 2744, 2250, 2108?"), containsString("64"));
+  }
+
 }

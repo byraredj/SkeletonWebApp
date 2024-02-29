@@ -29,7 +29,26 @@ public class QueryProcessor {
       return getMultipliedValue(query);
     }
 
+    if(query.toLowerCase().contains("square and a cube")) {
+      return getSquareAndCubeNumber(query);
+    }
+
     return "";
+  }
+
+  private String getSquareAndCubeNumber(String query) {
+    final String[] strArray = query.split(":");
+    final String numberArrayStr = strArray[1].replace("?","").replace(" ", "");
+    final String[] numberArray = numberArrayStr.split(",");
+    for (int i = 0; i < numberArray.length ; i++) {
+      double value = Double.parseDouble(numberArray[i]);
+      double sqrt = Math.sqrt(value);
+      double cubeRt = Math.cbrt(value);
+      if(sqrt %1 == 0 && cubeRt % 1 == 0) {
+        return Double.toString(value);
+      }
+    }
+  return null;
   }
 
   private String getMultipliedValue(String query) {
