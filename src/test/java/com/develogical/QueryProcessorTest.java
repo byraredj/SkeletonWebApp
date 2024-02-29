@@ -68,4 +68,19 @@ public class QueryProcessorTest {
     assertThat(queryProcessor.process("What is 23 minus 59?"), containsString("-36"));
   }
 
+  @Test
+  public void getDiff1() throws Exception {
+    assertThat(queryProcessor.process("What is 59 minus 23?"), containsString("36"));
+  }
+
+  @Test
+  public void getTwoPrimes() throws Exception {
+    assertThat(queryProcessor.process("Which of the following numbers are primes: 33, 12, 18, 7, 31?"), containsString("7, 31"));
+  }
+
+  @Test
+  public void getPrime() throws Exception {
+    assertThat(queryProcessor.process("Which of the following numbers are primes: 33, 12, 18, 70, 31?"), containsString("31"));
+  }
+
 }
