@@ -52,15 +52,16 @@ public class QueryProcessor {
         final String[] strArray = query.split(":");
         final String numberArrayStr = strArray[1].replace("?", "").replace(" ", "");
         final String[] numberArray = numberArrayStr.split(",");
+        List<Integer> list = new ArrayList<>();
         for (int i = 0; i < numberArray.length; i++) {
-            double value = Double.parseDouble(numberArray[i]);
+            int value = Integer.parseInt(numberArray[i]);
             double sqrt = Math.sqrt(value);
             double cubeRt = Math.cbrt(value);
             if (sqrt % 1 == 0 && cubeRt % 1 == 0) {
-                return Double.toString(value);
+                list.add(value);
             }
         }
-        return null;
+        return commaSeparated(list);
     }
 
     private String getMultipliedValue(String query) {
